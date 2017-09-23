@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="9d45ed35-2229-4b72-a688-41e7989d38a9" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/main/SuanfaTest.java" afterPath="$PROJECT_DIR$/src/main/java/main/SuanfaTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/util/SuanFa.java" afterPath="$PROJECT_DIR$/src/main/java/util/SuanFa.java" />
     </list>
     <list id="58568e20-c29e-4745-86f9-ec9b46b4986f" name="Rejected commit: Default" comment="push" />
     <ignored path="webStudy.iws" />
@@ -623,7 +621,14 @@
       <option name="project" value="LOCAL" />
       <updated>1506149072332</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="计算字符个数，完数等">
+      <created>1506162475157</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1506162475157</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -668,7 +673,8 @@
     <MESSAGE value="push" />
     <MESSAGE value="质数因子分解" />
     <MESSAGE value="最大公约数，最小公倍数" />
-    <option name="LAST_COMMIT_MESSAGE" value="最大公约数，最小公倍数" />
+    <MESSAGE value="计算字符个数，完数等" />
+    <option name="LAST_COMMIT_MESSAGE" value="计算字符个数，完数等" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
