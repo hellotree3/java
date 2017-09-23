@@ -2,6 +2,7 @@ package util;
 
 /**
  * 算法工具类，练习算法。通过SuanfaTest来测试
+ *
  * @author by 邻居的耳朵
  * @Begin 2017/9/21.
  */
@@ -285,46 +286,47 @@ public class SuanFa {
      * @param a
      * @param n
      */
-    public void countA(int a,int n){  //n个a 统计和
+    public void countA(int a, int n) {  //n个a 统计和
      /*
      思路1： 将a~n个a的值通过十进制算法转化，然后再统计
      思路2： 用stringBuilder直接append 1-n个a,然后再转化为数字，最后累加
       */
-        int result=0;
-        for(int i=1;i<=n;i++){
-            int aValue=zhuanHuan(a,i);
-            result+=aValue;
+        int result = 0;
+        for (int i = 1; i <= n; i++) {
+            int aValue = zhuanHuan(a, i);
+            result += aValue;
         }
-        System.out.println("s="+result);
+        System.out.println("s=" + result);
     }
-    public int zhuanHuan(int a,int n){   //n个a转化成十进制数
-        int result=0;
-        if(n<=0){
+
+    public int zhuanHuan(int a, int n) {   //n个a转化成十进制数
+        int result = 0;
+        if (n <= 0) {
             System.out.println("数据有误");
             return result;
         }
-        for(int i=0;i<n;i++){
-            result+=a*Math.pow(10,i);
+        for (int i = 0; i < n; i++) {
+            result += a * Math.pow(10, i);
         }
-        return  result;
+        return result;
     }
 
     /**
      * 9. 一个数如果恰好等于它的因子之和，这个数就称为"完数"。例如6=1＋2＋3.编程找出1000以内的所有完数。
      */
-    public void completeNum(){
+    public void completeNum() {
         ArrayList<Integer> complist = new ArrayList<Integer>();  //完数list
         //思路：同质数分解，先求因子，再判断
         System.out.println("完数：数值恰好等于它的因子之和。1000以内的所有完数如下：");
         //疑问：因子，应该不是指质因子吧，比如说12的因子应该是：1,2,3,6,12
-        for(int i=1;i<=1000;i++){
+        for (int i = 1; i <= 1000; i++) {
             ArrayList<Integer> list = new ArrayList<Integer>();   //单个数的因子list
-            int result=0;    //统计所有因子的总和
-            addDeposeList(list,i);     //将数分解，所得因子加入到list表中
-            for(Integer inte:list){         //将因子列表的数据取出，累加后与结果比对
-                  result+=inte.intValue();
+            int result = 0;    //统计所有因子的总和
+            addDeposeList(list, i);     //将数分解，所得因子加入到list表中
+            for (Integer inte : list) {         //将因子列表的数据取出，累加后与结果比对
+                result += inte.intValue();
             }
-            if(result==i){
+            if (result == i) {
                 complist.add(i);  //满足完数条件，则添加到complist
             }
         }
@@ -336,46 +338,47 @@ public class SuanFa {
      * @param list
      * @param n
      */
-    public  void addDeposeList(List<Integer>list,int n){
+    public void addDeposeList(List<Integer> list, int n) {
         //能整除的数就是因子，包括本身. 此题，因为涉及到累加，如果包含了本身，那加其他因子的结果是一定大于本身的。因而暂时去掉本身
-          for(int i=1;i<=n/2;i++){  //优化：最大的因子等于n/2
-              if(n%i==0){
-                  list.add(i);
-              }
-          }
+        for (int i = 1; i <= n / 2; i++) {  //优化：最大的因子等于n/2
+            if (n % i == 0) {
+                list.add(i);
+            }
+        }
     }
 
     /**
      * 公共方法：遍历list数组
      * @param list
      */
-    public void showArrList(List<Integer>list){
-        for(Integer i:list){
-            System.out.print(i+" ");
+    public void showArrList(List<Integer> list) {
+        for (Integer i : list) {
+            System.out.print(i + " ");
         }
         System.out.println();
     }
-  //网上的
-    public  void compNumber(int n){    //输入1000后会出现24这样的错误数据
+
+    //网上的
+    public void compNumber(int n) {    //输入1000后会出现24这样的错误数据
         int count = 1;
-        System.out.println(n+"以内的完数：");
-        for(int i=1;i<n+1;i++){     //i=24
+        System.out.println(n + "以内的完数：");
+        for (int i = 1; i < n + 1; i++) {     //i=24
             int sum = 0;
-            for(int j=1;j<i/2+1;j++){     //j<13
-                if((i%j)==0) {
+            for (int j = 1; j < i / 2 + 1; j++) {     //j<13
+                if ((i % j) == 0) {
                     sum += j;    //1+2+3+4+6+8+12
                 }
-        // 这里是有问题的。不应该放到循环体这个位置。如果前面的因子累加的结果刚好就是该数，会打印出来。所以出现了24这样的错误数据，
-       //24：1+2+3+4+6+8+12  =  24+12 。当满足等于24的时候就会把24打印出来
+                // 这里是有问题的。不应该放到循环体这个位置。如果前面的因子累加的结果刚好就是该数，会打印出来。所以出现了24这样的错误数据，
+                //24：1+2+3+4+6+8+12  =  24+12 。当满足等于24的时候就会把24打印出来
 //                    if(sum==i){
 //                        System.out.print(i+" ");
 //                        if((count++)%5==0)
 //                            System.out.println();
 //                    }
             }
-            if(sum==i){        //修复后
-                System.out.print(i+" ");
-                if((count++)%5==0)
+            if (sum == i) {        //修复后
+                System.out.print(i + " ");
+                if ((count++) % 5 == 0)
                     System.out.println();
             }
         }
@@ -384,9 +387,9 @@ public class SuanFa {
     /**
      * 有1、2、3、4个数字，能组成多少个互不相同且无重复数字的三位数？都是多少？
      */
- public  void showDifComb(){
+    public void showDifComb() {
 
- }
+    }
 }
 
 

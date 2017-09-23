@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9d45ed35-2229-4b72-a688-41e7989d38a9" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/util/SuanFa.java" afterPath="$PROJECT_DIR$/src/main/java/util/SuanFa.java" />
     </list>
     <list id="58568e20-c29e-4745-86f9-ec9b46b4986f" name="Rejected commit: Default" comment="push" />
     <ignored path="webStudy.iws" />
@@ -26,28 +28,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="SuanfaTest.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SuanfaTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/main/SuanfaTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
+            <state relative-caret-position="-2113">
               <caret line="25" column="36" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SuanFa.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SuanFa.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/util/SuanFa.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="222">
-              <caret line="387" column="0" selection-start-line="387" selection-start-column="0" selection-end-line="387" selection-end-column="0" />
+            <state relative-caret-position="2976">
+              <caret line="327" column="13" selection-start-line="327" selection-start-column="13" selection-end-line="327" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#4201#4210#0" expanded="true" />
-                <element signature="e#5037#5046#0" expanded="true" />
-                <element signature="e#5100#5109#0" expanded="true" />
-                <element signature="e#8845#8854#0" expanded="true" />
-                <element signature="e#9092#9101#0" expanded="true" />
+                <element signature="e#4204#4213#0" expanded="true" />
+                <element signature="e#5040#5049#0" expanded="true" />
+                <element signature="e#5103#5112#0" expanded="true" />
+                <element signature="e#8889#8898#0" expanded="true" />
+                <element signature="e#9144#9153#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -267,7 +269,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="C:/Program Files/Git/bin/git.exe" />
-    <property name="settings.editor.selected.configurable" value="debugger.stepping" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
@@ -628,7 +630,14 @@
       <option name="project" value="LOCAL" />
       <updated>1506162475157</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="计算字符个数，完数等">
+      <created>1506162483053</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1506162483053</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -727,26 +736,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/main/SuanfaTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/util/SuanFa.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="25" column="36" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
-          <folding />
+        <state relative-caret-position="2976">
+          <caret line="327" column="13" selection-start-line="327" selection-start-column="13" selection-end-line="327" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#4204#4213#0" expanded="true" />
+            <element signature="e#5040#5049#0" expanded="true" />
+            <element signature="e#5103#5112#0" expanded="true" />
+            <element signature="e#8889#8898#0" expanded="true" />
+            <element signature="e#9144#9153#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/util/SuanFa.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/main/SuanfaTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="387" column="0" selection-start-line="387" selection-start-column="0" selection-end-line="387" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#4201#4210#0" expanded="true" />
-            <element signature="e#5037#5046#0" expanded="true" />
-            <element signature="e#5100#5109#0" expanded="true" />
-            <element signature="e#8845#8854#0" expanded="true" />
-            <element signature="e#9092#9101#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="-2113">
+          <caret line="25" column="36" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
+          <folding />
         </state>
       </provider>
     </entry>
