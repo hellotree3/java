@@ -18,6 +18,7 @@ public class SuanfaTest {
         //showLotus();
         //showDepoNumTest();
        // showDeposeTest();
+        showMax_min();
     }
     public  static void  rabbitTest(){  //测试兔子对数
         SuanFa suanFa=new SuanFa();
@@ -65,5 +66,13 @@ public class SuanfaTest {
         System.out.println("请输入一个整数:");
         int num=sc.nextInt();
         suanFa.showDepose(num);
+    }
+    public static void showMax_min(){
+        SuanFa suanFa=new SuanFa();
+        Scanner sc=new Scanner(System.in);
+        System.out.println("请输入两个整数：");
+        int max=sc.nextInt();
+        int min=sc.nextInt();
+        suanFa.max_min(max,min);
     }
 }

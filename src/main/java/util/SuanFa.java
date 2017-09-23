@@ -168,5 +168,42 @@ public class SuanFa {
             }
         }
     }
+
+    /**
+     * 6. 输入两个正整数m和n，求其最大公约数和最小公倍数。
+     *  最大公约数：最大的共同质因素的乘积。最小公倍数，
+     * @param max
+     * @param min
+     */
+    public void showMaxMin(int max,int min){
+        if(min<max){             //保证max>min
+          int tp=max;
+          max=min;
+          min=tp;
+        }
+     //思路1：同质因素的分解法，将max，min取出来质因子放在列表中。最大公约数则比较共同的，最小公倍数则处理
+     //// TODO: 2017/9/23  
+    }
+    // 思路2：网上的辗转相除法，比我的简单
+    public  void max_min(int m, int n){   //文档里的答案
+        int temp = 1;
+        int yshu = 1;
+        int bshu = m*n;
+        if(n<m){
+            temp = n;
+            n = m;
+            m = temp;
+        }
+        int a=m,b=n;
+        while(m!=0){
+            temp = n%m;
+            n = m;
+            m = temp;
+        }
+        yshu = n;
+        bshu /= n;
+        System.out.println(a+"和"+b+"的最大公约数为"+yshu);
+        System.out.println(a+"和"+b+"的最小公倍数为"+bshu);
+    }
 }
 
