@@ -6,6 +6,9 @@ package util;
  * @Begin 2017/9/21.
  */
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static java.lang.Math.sqrt;
 
 public class SuanFa {
@@ -68,6 +71,7 @@ public class SuanFa {
     public void lotusNum(int n){
         if(n<=100){
             System.out.println("输入有误！");
+            return;
         }
         //关键是拆分出个十百位
         int ge,shi,bai;
@@ -84,28 +88,83 @@ public class SuanFa {
     /**
      * 4. 将一个正整数分解质因数。例如：输入90,打印出90=2*3*3*5。
      */
-    public void showDepose(int n){
-        if(n<=0){
+    public void showDepose(int n){              //这个代码有bug ，24，13
+        if(n<=1){
             System.out.println("输入有误！");
+            return;
         }
+//        System.out.print(n+"的质因素有：");
        /*
        程序分析：对n进行分解质因数，应先找到一个最小的质数k，然后按下述步骤完成：
      (1)如果这个质数恰等于n，则说明分解质因数的过程已经结束，打印出即可。
      (2)如果n<>k，但n能被k整除，则应打印出k的值，并用n除以k的商,作为新的正整数n,重复执行第一步。
      (3)如果n不能被k整除，则用k+1作为k的值,重复执行第一步
         */
-        if(n==1||n==2){
-            System.out.println(n+"="+1*n);
+        if(n==2){
+            System.out.println(n);
         }
-        //// TODO: 2017/9/21   还不会啊
+//        for(int i=2;i<n;i++){         //这个代码是有问题的。关键问题就是n是变化的。应该新建一个临时变量存储变化的n
+//            while(n%i==0 && n!=i){
+//                n/=i;
+//                System.out.print(i+"*");
+//            }
+//            if(n==i){
+//                System.out.println(i);
+//                break;
+//            }
+//        }
+        int tmp=n;                   //tmp来存储变化的n
         for(int i=2;i<n;i++){
-            while(n%i==0 && n!=i){
-                n/=i;
+            while(tmp%i==0 && n!=i){
+                tmp/=i;
                 System.out.print(i+"*");
             }
             if(n==i){
                 System.out.println(i);
                 break;
+            }
+        }
+        System.out.println();
+    }
+
+    /**
+     * 分解质因素 ，此方法先判断了质数，再去循环分解，再打印
+     * @param n
+     */
+    public  void showDeposeNum(int n){
+        if(n<=1){
+            System.out.println("输入有误！"); //注意 1不是素数
+            return;
+        }
+        System.out.print(n+"=");
+        int tp=n;  //除质数
+//        for(int i=2;i<=n;i++){
+//          while(isPrime(i)&&tp%i==0){  //目前来说，最后一个会打印出*  不太好。结果是对的
+//              System.out.print(i+"*");
+//              tp=tp/i;
+//          }
+//        }
+        //优化：将分解的质数因子存入列表中，然后再打印
+        ArrayList<Integer> primeNum=new ArrayList<Integer>();
+        for(int i=2;i<=n;i++){
+           while (isPrime(i)&&(tp%i==0)){
+               tp=tp/i;
+               primeNum.add(i);
+           }
+        }
+        showPrimeArr(primeNum);
+    }
+
+    /**
+     * 打印质因素元素
+     * @param list
+     */
+    public void showPrimeArr(List<Integer> list){
+        for(int i=0;i<list.size();i++){
+            if(i==list.size()-1){        //多个因子则为最后一个因子；只有一个因子时，就表示该因子
+                System.out.println(list.get(i));
+            }else {
+                System.out.print(list.get(i)+"*") ;
             }
         }
     }

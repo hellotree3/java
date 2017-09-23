@@ -15,7 +15,9 @@ public class SuanfaTest {
         // rabbitTest();
         //primeTest();
         // isPrimeTest();
-        showLotus();
+        //showLotus();
+        //showDepoNumTest();
+       // showDeposeTest();
     }
     public  static void  rabbitTest(){  //测试兔子对数
         SuanFa suanFa=new SuanFa();
@@ -49,5 +51,19 @@ public class SuanfaTest {
         System.out.println("请输入100-1000以内的一个整数:");
         int num=sc.nextInt();
         suanFa.lotusNum(num);
+    }
+    public static  void showDepoNumTest(){   //分解素数因子
+        SuanFa suanFa=new SuanFa();
+        Scanner sc=new Scanner(System.in);
+        System.out.println("请输入一个整数:");
+        int num=sc.nextInt();
+        suanFa.showDeposeNum(num);
+    }
+    public static  void showDeposeTest(){
+        SuanFa suanFa=new SuanFa();
+        Scanner sc=new Scanner(System.in);
+        System.out.println("请输入一个整数:");
+        int num=sc.nextInt();
+        suanFa.showDepose(num);
     }
 }
