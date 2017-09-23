@@ -243,6 +243,7 @@ public class SuanFa {
 
     /**
      * 7. 输入一行字符，分别统计出其中英文字母、空格、数字和其它字符的个数。
+     *
      * @param s
      */
     public void countCharacter(String s) {
@@ -283,6 +284,7 @@ public class SuanFa {
 
     /**
      * 8. 求s=a+aa+aaa+aaaa+aa...a的值，其中a是一个数字,n代表几个a.求和
+     *
      * @param a
      * @param n
      */
@@ -335,6 +337,7 @@ public class SuanFa {
 
     /**
      * 公用方法：获取n的所有因子，存入list表中
+     *
      * @param list
      * @param n
      */
@@ -349,6 +352,7 @@ public class SuanFa {
 
     /**
      * 公共方法：遍历list数组
+     *
      * @param list
      */
     public void showArrList(List<Integer> list) {
@@ -385,10 +389,72 @@ public class SuanFa {
     }
 
     /**
-     * 有1、2、3、4个数字，能组成多少个互不相同且无重复数字的三位数？都是多少？
+     * 10. 有1、2、3、4个数字，能组成多少个互不相同且无重复数字的三位数？都是多少？
+     * 分析：可填在百位、十位、个位的数字都是1、2、3、4。组成所有的排列后再去 掉不满足条件的排列
      */
     public void showDifComb() {
+        //3重循环
+        int count = 0;
+        int num = 0;
+        for (int i = 1; i <= 4; i++) {   //暂定i,j,k为个，十，百
+            for (int j = 1; j <= 4; j++) {
+                for (int k = 1; k <= 4; k++) {
+                    //组合成十位数字
+                    if (k != i && j != k && i != j) {    //条件少写一共就会报错
+                        num = i + 10 * j + 100 * k;
+                        System.out.print(num + "\t");
+                        count++;
+                        if (count % 10 == 0)
+                            System.out.println();
+                    }
+                }
+            }
+        }
+        System.out.println("\n 一共有" + count + "个");
+    }
 
+    /**
+     * 11. 一个整数，它加上100后是一个完全平方数，再加上168又是一个完全平方数，请问该数是多少
+     */
+    public void sqrtNum() {
+        for (int i = 0; i < 100000; i++) {
+            if (isSqrtNum(i + 100) && isSqrtNum(i + 168)) {
+                System.out.print(i);
+                break;
+            }
+        }
+    }
+
+    //判断是否是平方数
+    public boolean isSqrtNum(int n) {
+        boolean isSqr = false;
+        for (int i = 1; i <= Math.sqrt(n); i++) {
+            if (n == Math.pow(i, 2)) {  //等于平方
+                isSqr = true;
+                break;
+            }
+        }
+        return isSqr;
+    }
+
+    /**
+     * 12. 输入某年某月某日，判断这一天是这一年的第几天
+     * @param year
+     * @param month
+     * @param date
+     * @return
+     */
+    public void dayOfYear(int year,int month,int date){
+        //思路根据年份判断是否闰月，根据月份和日期可以统计天数
+        int n = 0;
+        int[] month_date = new int[] {0,31,28,31,30,31,30,31,31,30,31,30}; //对哦，12月就不用累加本月的天数了。其他都是上月的天数
+        System.out.println(month_date.length);
+        if((year%400)==0 || ((year%4)==0)&&((year%100)!=0))
+            month_date[2] = 29;
+        System.out.println(month_date.length);
+        for(int i=0;i<month;i++)
+            n += month_date[i];
+       System.out.println(n+date);
     }
 }
 
