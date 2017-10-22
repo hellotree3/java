@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE contactList [
+        <!ELEMENT contactList (contact+)>
+        <!ELEMENT contact (name,sex*,telephone+,qq*,email)>
+        <!ELEMENT name (#PCDATA)>
+        <!ELEMENT sex (#PCDATA)>
+        <!ELEMENT telephone (#PCDATA)>
+        <!ELEMENT qq (#PCDATA)>
+        <!ELEMENT email (#PCDATA)>
+        <!ATTLIST contact id CDATA #REQUIRED>
+        <!ATTLIST  contact address CDATA #IMPLIED>
+        ]>
+  <contactList>
+    <contact id="001" address="可选属性" >
+        <name>dtd测试</name>
+        <telephone>1</telephone>
+        <telephone>2</telephone>
+        <qq></qq>
+        <email></email>
+    </contact>
+    <contact id="002" address="可选属性" >
+        <name>dtd测试</name>
+        <sex></sex>
+        <telephone>1</telephone>
+        <telephone>2</telephone>
+        <qq></qq>
+        <email></email>
+    </contact>
+</contactList>
